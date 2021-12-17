@@ -1,15 +1,17 @@
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup as soup
 
-url = 'https://pin.it/7FMDwRS'
+url = ''
 
-r = requests.get(url)
-# print(r)
+r = requests.get(url).content
 
-soup = BeautifulSoup(r.text, "html.parser")
-# print(soup)
+page_soup = soup(r, 'html.parser')
+print(page_soup)
 
-container = soup.select_one("mainContainer")
+# soup = BeautifulSoup(r.text, "html.parser")
+# # print(soup)
+
+# container = soup.select_one("id_searchword")
 
 
-print(container)
+# print(container)
